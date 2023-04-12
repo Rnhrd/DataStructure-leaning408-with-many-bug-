@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+typedef int ElemType;       //方便修改数据类型
 typedef struct LNode{        //定义单链表结点类型
-    int data;               //数据域
+    ElemType data;               //数据域
     struct LNode *next;     //指针域
 }LNode, *LinkList;
 
@@ -28,7 +29,7 @@ int Length(LinkList L){                //求表长
 }
 
 LinkList TailInsert(LinkList L){      //尾插法
-    int x;
+    ElemType x;
     L=(LinkList)malloc(sizeof(LNode));      //建立头结点
     LNode *s,*r=L;                            //r为表尾指针
     scanf("%d",&x);
@@ -81,7 +82,7 @@ LNode *GetElem(LinkList L, int i){      //按序号找结点
     }             
 }
 
-int LocateElem(LinkList L,int e){       //按值找结点 
+int LocateElem(LinkList L,ElemType e){       //按值找结点 
     LNode *p=L->next;
     int j=1;
     while (p!=NULL && p->data!=e){
@@ -98,7 +99,7 @@ int LocateElem(LinkList L,int e){       //按值找结点
     
 }
 
-void ListInsert(LinkList L,int i, int e){   //插入结点操作
+void ListInsert(LinkList L,int i, ElemType e){   //插入结点操作
     LNode *p=GetElem(L,i);
     LNode *s=(LNode *)malloc(sizeof(LNode));   
     s->data=e;
