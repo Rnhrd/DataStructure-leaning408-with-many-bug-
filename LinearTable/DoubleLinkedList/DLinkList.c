@@ -9,6 +9,11 @@ typedef struct LNode
     struct LNode *prior,*next;   
 }LNode, *DLinkList;
 
-void InitList(DLinkList L){
-    
+DLinkList InitList(){                //初始化双链表
+    DLinkList L=(DLinkList)malloc(sizeof(LNode));
+    if (L==NULL)
+        return NULL;
+    L->next=L;
+    L->prior=L;
+    return L;
 }
