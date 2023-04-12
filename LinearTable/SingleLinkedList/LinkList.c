@@ -2,10 +2,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-typedef int ElemType;
-
 typedef struct LNode{        //定义单链表结点类型
-    ElemType data;               //数据域
+    int data;               //数据域
     struct LNode *next;     //指针域
 }LNode, *LinkList;
 
