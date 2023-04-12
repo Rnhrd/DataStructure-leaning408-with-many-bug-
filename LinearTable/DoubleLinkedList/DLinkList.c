@@ -9,4 +9,6 @@ typedef struct LNode
     struct LNode *prior,*next;   
 }LNode, *DLinkList;
 
-void InitList()
+void InitList(DLinkList L){
+    
+}
